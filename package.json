@@ -1,0 +1,17 @@
+{
+  "name": "thingiverse-api",
+  "version": "0.0.4",
+  "description": "interface to the Thingiverse API",
+  "author": {
+    "name": "Peter Yee",
+    "email": "graphicsforge@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/graphicsforge/thingiverse-api.git"
+  },
+  "dependencies": {
+    "querystring": "*",
+    "form-data": "*"
+  }
+}
