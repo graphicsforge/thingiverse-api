@@ -2,7 +2,7 @@ var should = require('chai').should();
 var thingiverse = require('./config');
 
 describe('Testing user endpoints…', function() {
-  var user = 'MakerBot';
+  var user = 'gswalden';
   var url  = '/users/' + user;
 
   it('GET ' + url, function(done) {
@@ -29,9 +29,21 @@ describe('Testing user endpoints…', function() {
     });
   });
 
+  it('PATCH ' + url, function(done) {
+    var name = 'Greg';
+    thingiverse.patch(url, {
+      first_name: name
+    }, function(error, response) {
+      if (error) throw error;
+      // ensure response object has a property "first_name" that equals the variable name
+      response.should.have.property('first_name', name);
+      done();
+    });
+  });
+
   // Template
   // it('METHOD ' + url, function(done) {
-  //   thingiverse.METHOD(url, function(error, response) {
+  //   thingiverse.method(url, function(error, response) {
   //     if (error) throw error;
   //     done();
   //   });

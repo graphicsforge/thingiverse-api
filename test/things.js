@@ -32,7 +32,7 @@ describe('Testing thing endpoints…', function() {
 
   // Template
   // it('METHOD ' + url, function(done) {
-  //   thingiverse.METHOD(url, function(error, response) {
+  //   thingiverse.method(url, function(error, response) {
   //     if (error) throw error;
   //     done();
   //   });
