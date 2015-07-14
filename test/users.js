@@ -1,10 +1,12 @@
+// allow pretty colors in the console
+var colors = require('colors');
 // tell chai we want to use the BDD (should) syntax http://chaijs.com/api/bdd/
 var should = require('chai').should();
 // load the thingiverse instance from config.js
 var thingiverse = require('./config');
 
 // for the describe() and it() syntax docs, see http://mochajs.org/#getting-started
-describe('Testing user endpoints…', function() {
+describe('Testing ' + 'user'.cyan + ' endpoints…', function() {
   var user = 'tvapi'; // user setup for testing
   var url  = '/users/' + user;
 
