@@ -2,7 +2,7 @@ var should = require('chai').should();
 var thingiverse = require('./config');
 
 describe('Testing thing endpoints…', function() {
-  var thing = 259005; // 4-8-8-4 Big Boy Locomotive
+  var thing = 925620; // tvapi's first thing
   var url  = '/things/' + thing;
 
   it('GET ' + url, function(done) {

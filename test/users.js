@@ -2,7 +2,7 @@ var should = require('chai').should();
 var thingiverse = require('./config');
 
 describe('Testing user endpoints…', function() {
-  var user = 'gswalden';
+  var user = 'tvapi';
   var url  = '/users/' + user;
 
   it('GET ' + url, function(done) {
@@ -30,7 +30,7 @@ describe('Testing user endpoints…', function() {
   });
 
   it('PATCH ' + url, function(done) {
-    var name = 'Greg';
+    var name = 'TV' + Date.now();
     thingiverse.patch(url, {
       first_name: name
     }, function(error, response) {
@@ -48,4 +48,14 @@ describe('Testing user endpoints…', function() {
   //     done();
   //   });
   // });
+  
+  after(function(done) {
+    // reset firstname
+    thingiverse.patch(url, {
+      first_name: 'Thingiverse'
+    }, function(error, response) {
+      if (error) throw error;
+      done();
+    });
+  });
 });
