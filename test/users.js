@@ -1,6 +1,5 @@
 var should = require('chai').should();
-var Thingiverse = require('../');
-var thingiverse = new Thingiverse(process.env.TOKEN);
+var thingiverse = require('./config');
 
 describe('Testing user endpoints…', function() {
   var user = 'MakerBot';
@@ -20,6 +19,7 @@ describe('Testing user endpoints…', function() {
     thingiverse.get(url + '/things', function(error, response) {
       if (error) throw error;
       response.should.be.an('array');
+      // if array isn't empty, test first object
       if (response.length) {
         response[0].should.be.an('object');
         response[0].should.have.property('id');

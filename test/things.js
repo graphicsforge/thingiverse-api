@@ -1,6 +1,5 @@
 var should = require('chai').should();
-var Thingiverse = require('../');
-var thingiverse = new Thingiverse(process.env.TOKEN);
+var thingiverse = require('./config');
 
 describe('Testing thing endpoints…', function() {
   var thing = 259005; // 4-8-8-4 Big Boy Locomotive
@@ -21,6 +20,7 @@ describe('Testing thing endpoints…', function() {
     thingiverse.get(url + '/images', function(error, response) {
       if (error) throw error;
       response.should.be.an('array');
+      // if array isn't empty, test first object
       if (response.length) {
         response[0].should.be.an('object');
         response[0].should.have.property('id');
